@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "3d1f1e3f-6aaa-4650-abda-b28042669228",
+		"name": "Alumnos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38629554",
+		"_collection_link": "https://www.postman.com/wemanzanero/workspace/alumnos/collection/38629554-3d1f1e3f-6aaa-4650-abda-b28042669228?action=share&source=collection_link&creator=38629554"
+	},
+	"item": [
+		{
+			"name": "Nuevo alumno",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "wmanzanero",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{vault:authorization-password}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"fecha_nacimiento\": \"2010-05-12\",\r\n  \"nombre_padre\": \"Carlos Pérez\",\r\n  \"nombre_madre\": \"Ana López\",\r\n  \"grado\": 6,\r\n  \"seccion\": \"A\",\r\n  \"fecha_ingreso\": \"2023-01-10\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/crear-alumno/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"crear-alumno",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
