@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <h2>Registro de Alumnos</h2>
+    <form (submit)="agregarAlumno()">
+      <div class="mb-3">
+        <label>Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoAlumno.nombre" name="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label>Fecha de Nacimiento</label>
+        <input type="date" class="form-control" [(ngModel)]="nuevoAlumno.fecha_nacimiento" name="fecha_nacimiento" required>
+      </div>
+      <div class="mb-3">
+        <label>Nombre del Padre</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoAlumno.nombre_padre" name="nombre_padre">
+      </div>
+      <div class="mb-3">
+        <label>Nombre de la Madre</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoAlumno.nombre_madre" name="nombre_madre">
+      </div>
+      <div class="mb-3">
+        <label>Grado</label>
+        <input type="number" class="form-control" [(ngModel)]="nuevoAlumno.grado" name="grado" required>
+      </div>
+      <div class="mb-3">
+        <label>Sección</label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoAlumno.seccion" name="seccion">
+      </div>
+      <div class="mb-3">
+        <label>Fecha de Ingreso</label>
+        <input type="date" class="form-control" [(ngModel)]="nuevoAlumno.fecha_ingreso" name="fecha_ingreso">
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar Alumno</button>
+    </form>
+
+    <hr>
+
+    <h2>Consultar Alumnos por Grado</h2>
+    <input type="number" class="form-control" [(ngModel)]="gradoConsulta" name="gradoConsulta" placeholder="Ingrese el grado">
+    <button class="btn btn-success mt-2" (click)="consultarAlumnos()">Consultar</button>
+
+    <ul class="list-group mt-3" *ngIf="alumnos.length > 0">
+      <li class="list-group-item" *ngFor="let alumno of alumnos">
+        {{ alumno.nombre }} - Grado: {{ alumno.grado }} - Sección: {{ alumno.seccion }}
+      </li>
+    </ul>
+</div>
